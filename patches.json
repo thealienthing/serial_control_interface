@@ -1,0 +1,42 @@
+{
+    "p1": {
+        "OSC2_WAVEFORM_SAW": [
+            166,
+            true
+        ]
+    },
+    "p2": {
+        "OSC2_WAVEFORM_SAW": [
+            166,
+            true
+        ]
+    },
+    "example": {
+        "OSC2_WAVEFORM_SAW": [
+            166,
+            true
+        ],
+        "OSC1_WAVEFORM_TRI": [
+            163,
+            true
+        ],
+        "OSC1_GAIN": [
+            172,
+            0.75
+        ],
+        "OSC2_GAIN": [
+            173,
+            0.34
+        ]
+    },
+    "f": {
+        "OSC2_WAVEFORM_SQUARE": [
+            167,
+            true
+        ],
+        "OSC1_WAVEFORM_SAW": [
+            161,
+            true
+        ]
+    }
+}

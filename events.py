@@ -1,38 +1,44 @@
 import enum
 
 class Event(enum.Enum):
-    OSC1_SIN = enum.auto()
-    OSC1_SAW = enum.auto()
-    OSC1_SQUARE = enum.auto()
-    OSC1_TRI = enum.auto()
-    OSC1_NOISE = enum.auto()
+    OSC1_WAVEFORM_SIN = 0xA0
+    OSC1_WAVEFORM_SAW = 0xA1
+    OSC1_WAVEFORM_SQUARE = 0xA2
+    OSC1_WAVEFORM_TRI = 0xA3
+    OSC1_WAVEFORM_NOISE = 0xA4
 
-    OSC2_SIN = enum.auto()
-    OSC2_SAW = enum.auto()
-    OSC2_SQUARE = enum.auto()
-    OSC2_TRI = enum.auto()
-    OSC2_NOISE = enum.auto()
+    OSC2_WAVEFORM_SIN = 0xA5
+    OSC2_WAVEFORM_SAW = 0xA6
+    OSC2_WAVEFORM_SQUARE = 0xA7
+    OSC2_WAVEFORM_TRI = 0xA8
+    OSC2_WAVEFORM_NOISE = 0xA9
 
-    OSC2_SEMITONE = enum.auto()
-    OSC2_TUNE = enum.auto()
+    OSC2_SEMITONE = 0xAA
+    OSC2_TUNE = 0xAB
 
-    OSC1_GAIN = enum.auto()
-    OSC2_GAIN = enum.auto()
+    OSC1_GAIN = 0xAC
+    OSC2_GAIN = 0xAD
 
-    AMP_ENV_ATTACK = enum.auto()        
-    AMP_ENV_DECAY = enum.auto()
-    AMP_ENV_SUSTAIN = enum.auto()
-    AMP_ENV_RELEASE = enum.auto()
+    AMP_ENV_ATTACK = 0xAE
+    AMP_ENV_DECAY = 0xAF
+    AMP_ENV_SUSTAIN = 0xB0
+    AMP_ENV_RELEASE = 0xB1
 
-    FILTER_ENV_ATTACK = enum.auto()
-    FILTER_ENV_DECAY = enum.auto()
-    FILTER_ENV_SUSTAIN = enum.auto()
-    FILTER_ENV_RELEASE = enum.auto()
+    FILTER_ENV_ATTACK = 0xB2
+    FILTER_ENV_DECAY = 0xB3
+    FILTER_ENV_SUSTAIN = 0xB4
+    FILTER_ENV_RELEASE = 0xB5
     
-    FILTER_LOWPASS = enum.auto()
-    FILTER_HIGHPASS = enum.auto()
-    FILTER_CUTOFF = enum.auto()
-    FILTER_RESONANCE = enum.auto()
-    FILTER_ENV_INTENSITY = enum.auto()
+    FILTER_LOWPASS = 0xB6
+    FILTER_HIGHPASS = 0xB7
+    FILTER_CUTOFF = 0xB8
+    FILTER_RESONANCE = 0xB9
+    FILTER_ENV_INTENSITY = 0xBA
+
+    #Events unrelated to actual synth params
+    DUMP_PATCH_DATA = enum.auto()
+    PATCH_NAME = enum.auto()
+    LOAD_PATCH = enum.auto()
+    SELECT_PATCH = enum.auto()
 
 

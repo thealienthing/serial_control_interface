@@ -5,19 +5,19 @@ OSC1_GROUP = "OSC1_GROUP"
 OSC2_GROUP = "OSC2_GROUP"
 
 osc1_layout = sg.Frame("Osc1", [
-    [sg.Radio("Sin", OSC1_GROUP, key=Event.OSC1_SIN, enable_events=True)],
-    [sg.Radio("Saw", OSC1_GROUP, key=Event.OSC1_SAW, enable_events=True)],
-    [sg.Radio("Square", OSC1_GROUP, key=Event.OSC1_SQUARE, enable_events=True)],
-    [sg.Radio("Triangle", OSC1_GROUP, key=Event.OSC1_TRI, enable_events=True)],
-    [sg.Radio("Noise", OSC1_GROUP, key=Event.OSC1_NOISE, enable_events=True)]
+    [sg.Radio("Sin", OSC1_GROUP, key=Event.OSC1_WAVEFORM_SIN, enable_events=True)],
+    [sg.Radio("Saw", OSC1_GROUP, key=Event.OSC1_WAVEFORM_SAW, enable_events=True)],
+    [sg.Radio("Square", OSC1_GROUP, key=Event.OSC1_WAVEFORM_SQUARE, enable_events=True)],
+    [sg.Radio("Triangle", OSC1_GROUP, key=Event.OSC1_WAVEFORM_TRI, enable_events=True)],
+    [sg.Radio("Noise", OSC1_GROUP, key=Event.OSC1_WAVEFORM_NOISE, enable_events=True)]
 ])
 
 osc2_layout = sg.Frame("Osc2", [
-    [sg.Radio("Sin", OSC2_GROUP, key=Event.OSC2_SIN, enable_events=True)],
-    [sg.Radio("Saw", OSC2_GROUP, key=Event.OSC2_SAW, enable_events=True)],
-    [sg.Radio("Square", OSC2_GROUP, key=Event.OSC2_SQUARE, enable_events=True)],
-    [sg.Radio("Triangle", OSC2_GROUP, key=Event.OSC2_TRI, enable_events=True)],
-    [sg.Radio("Noise", OSC2_GROUP, key=Event.OSC2_NOISE, enable_events=True)]
+    [sg.Radio("Sin", OSC2_GROUP, key=Event.OSC2_WAVEFORM_SIN, enable_events=True)],
+    [sg.Radio("Saw", OSC2_GROUP, key=Event.OSC2_WAVEFORM_SAW, enable_events=True)],
+    [sg.Radio("Square", OSC2_GROUP, key=Event.OSC2_WAVEFORM_SQUARE, enable_events=True)],
+    [sg.Radio("Triangle", OSC2_GROUP, key=Event.OSC2_WAVEFORM_TRI, enable_events=True)],
+    [sg.Radio("Noise", OSC2_GROUP, key=Event.OSC2_WAVEFORM_NOISE, enable_events=True)]
 ])
 
 mixer_layout = sg.Frame("Oscillator Mix", [

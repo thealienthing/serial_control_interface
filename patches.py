@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 import json
 import os
 import struct
+from serial import Serial
 from events import Event
 from enum import Enum
 
@@ -9,7 +10,8 @@ PATCH_SAVE_FILE = "patches.json"
 PARAM_HEADER = 0xDEADBEEF
 
 class Patch:
-    def __init__(self):
+    def __init__(self,):
+        self.serial_con = None
         self.patch_data = {}
         self.bank_names = []
         self.name = ""
@@ -38,6 +40,7 @@ class Patch:
                 if "OSC2_WAVEFORM" in key:
                     del self.patch_data[key]
                     break
+
         self.send_serialized_data(event.value, value)
         self.patch_data[event.name] = [event.value, value]
 
@@ -65,12 +68,17 @@ class Patch:
         print(json.dumps(self.patch_data, indent=4))
 
     def send_serialized_data(self, data_key, val):
-        header = struct.pack(">I", PARAM_HEADER)
-        data_key = struct.pack(">I", data_key)
-        val = struct.pack(">f", val)
+        header = struct.pack("<I", PARAM_HEADER)
+        data_key = struct.pack("<I", data_key)
+        val = struct.pack("<f", val)
         serialized_data = header + data_key + val
         print(serialized_data)
+        if self.serial_con:
+            self.serial_con.write(serialized_data)
         #print(f"Sending data key {struct.unpack('<I', data_key)} with val {struct.unpack('<f', val)}")
+
+    def set_serial_con(self, serial_con):
+        self.serial_con = serial_con
 
 patch = Patch()
 
